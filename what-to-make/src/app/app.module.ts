@@ -15,11 +15,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainOverviewComponent } from './components/main-overview/main-overview.component';
+import { FoodService } from './services/food-service.service';
+import { RecipeComponent } from './components/recipe/recipe.component';
+import { RecipeListComponent } from './components/recipe-list/recipe-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainOverviewComponent
+    MainOverviewComponent,
+    RecipeComponent,
+    RecipeListComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +39,7 @@ import { MainOverviewComponent } from './components/main-overview/main-overview.
     MatButtonModule,
     MatCardModule
   ],
-  providers: [],
+  providers: [FoodService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

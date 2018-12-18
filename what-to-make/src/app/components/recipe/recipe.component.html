@@ -1,0 +1,29 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      {{recipeTest.label}}
+    </mat-card-title>
+    <mat-card-subtitle> 
+      Calories: {{recipeTest.calories | number : '1.1-2'}}<br/>
+      {{recipeTest.dietLabels.join(', ')}}
+    </mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="{{recipeTest.image}}">
+  <mat-card-content>
+    <div class="flex">
+      <mat-card-subtitle>
+        Ingredients
+      </mat-card-subtitle>
+      <span class="space"></span>
+      <mat-card-subtitle>
+        Creation Time: {{recipeTest.totalTime}} Mins
+      </mat-card-subtitle>
+    </div>
+    <ul class="list-group">
+      <li *ngFor="let ingredient of recipeTest.ingredientLines" class="list-group-item">{{ingredient}}</li>
+    </ul>
+  </mat-card-content>
+  <mat-card-actions class="flex justify-content-end">
+      <button mat-button (click)="onClick(recipeTest.url)">Instructions</button>
+  </mat-card-actions>
+</mat-card>

@@ -1,25 +1,22 @@
 <div class="main-container">
-  <mat-toolbar color="primary">
+  <mat-toolbar color="primary" class="mat-elevation-z8">
     <h2>Food Search</h2>
     <span class="space"></span>
-    <button mat-mini-fab color="accent">
-      <mat-icon>view_list</mat-icon>
+    <button mat-mini-fab color="accent" (click)="displaySearchContainer = !displaySearchContainer">
+      <mat-icon>search</mat-icon>
     </button>
   </mat-toolbar>
-  <div class="container searchContent">
+  <div class="container searchContent" *ngIf="displaySearchContainer" @expandableState>
     <!--Search content-->
-    <h4 class="title">Search</h4>
     <div class="row search">
-      <mat-form-field appearance="outline">
-        <input matInput placeholder="Grilled Cheese">
-        <mat-icon matSuffix>search</mat-icon>
+      <mat-form-field appearance="outline" *ngIf="displaySearchContainer" @openClose>
+        <input matInput placeholder="Search">
+        <button mat-button class="searchBtn" maxlength="50">
+          <mat-icon matSuffix>search</mat-icon>
+        </button>
       </mat-form-field>
     </div>
     <!--Queried content-->
   </div>
-  <div class="container">
-    <div class="row content">
-     
-    </div>
-  </div>
+  <app-recipe-list></app-recipe-list>
 </div>
