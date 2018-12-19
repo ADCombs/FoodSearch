@@ -21,7 +21,7 @@ export class RecipeComponent implements OnInit {
     totalTime: 20,
   }
 
-  @Input() recipe;
+  @Input() recipe: any;
 
   constructor() {}
 

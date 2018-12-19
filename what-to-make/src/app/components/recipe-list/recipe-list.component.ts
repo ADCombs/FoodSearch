@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FoodService } from 'src/app/services/food-service.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-recipe-list',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecipeListComponent implements OnInit {
 
-  constructor() { }
+  constructor(public foodService: FoodService) { }
 
   ngOnInit() {
+
   }
 
 }

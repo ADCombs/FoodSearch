@@ -10,10 +10,11 @@
     <!--Search content-->
     <div class="row search">
       <mat-form-field appearance="outline" *ngIf="displaySearchContainer" @openClose>
-        <input matInput placeholder="Search">
-        <button mat-button class="searchBtn" maxlength="50">
+        <input matInput placeholder="Search" #searchInput>
+        <button mat-button [disabled]="!searchInput.value" (click)="onSearch(searchInput.value)">
           <mat-icon matSuffix>search</mat-icon>
         </button>
+        <mat-error></mat-error>
       </mat-form-field>
     </div>
     <!--Queried content-->

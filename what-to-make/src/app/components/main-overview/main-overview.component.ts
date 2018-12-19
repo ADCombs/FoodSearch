@@ -29,13 +29,13 @@ export class MainOverviewComponent implements OnInit {
 
   displaySearchContainer: boolean = false;
 
-  constructor(private food: FoodService) { }
+  constructor(private foodSerivce: FoodService) { }
   
-  ngOnInit() {
-    
+  ngOnInit() {    
   }
 
-  testFunction(){
+  onSearch(searchTerm: string){
+    this.foodSerivce.foodRequest(searchTerm);
   }
 
 }
