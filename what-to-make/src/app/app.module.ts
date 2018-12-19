@@ -9,6 +9,7 @@ import {
   MatButtonModule,
   MatCardModule
 } from '@angular/material';
+import {FormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -37,7 +38,8 @@ import { RecipeListComponent } from './components/recipe-list/recipe-list.compon
     MatIconModule,
     MatSidenavModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    FormsModule
   ],
   providers: [FoodService],
   bootstrap: [AppComponent]

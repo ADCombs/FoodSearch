@@ -15,6 +15,6 @@ export class FoodService {
     var body = {
       "item" : foodType
     }
-    this.request = this.http.post('/api/post/recipeSearch.php', body);
+    this.request = this.http.post('http://localhost/example.test/api/post/recipeSearch.php', body);
   }
 }

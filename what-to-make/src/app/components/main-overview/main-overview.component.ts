@@ -28,14 +28,16 @@ import { trigger, state, transition, style, animate } from '@angular/animations'
 export class MainOverviewComponent implements OnInit {
 
   displaySearchContainer: boolean = false;
+  foodItem: string;
 
   constructor(private foodSerivce: FoodService) { }
   
   ngOnInit() {    
   }
 
-  onSearch(searchTerm: string){
-    this.foodSerivce.foodRequest(searchTerm);
+  onSearch(){
+    this.foodSerivce.foodRequest(this.foodItem);
   }
+
 
 }

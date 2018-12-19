@@ -1,9 +1,7 @@
-<div class="container padding-top-15">
-    <div class="row">
-        <div class="col-md-12">
-            <app-recipe *ngFor="let recipe of foodService.request | async"
-            [recipe] = recipe
-            ></app-recipe>
+<div class="container padding-top-15" *ngFor="let recipe of foodService.request | async">
+    <div class="row" >
+        <div class="col-md-12" >
+            <app-recipe [recipe] = recipe></app-recipe>
         </div>
     </div>
 </div>

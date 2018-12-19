@@ -10,8 +10,8 @@
     <!--Search content-->
     <div class="row search">
       <mat-form-field appearance="outline" *ngIf="displaySearchContainer" @openClose>
-        <input matInput placeholder="Search" #searchInput>
-        <button mat-button [disabled]="!searchInput.value" (click)="onSearch(searchInput.value)">
+        <input matInput placeholder="Search" #searchInput (keyup.enter)="onSearch()" [(ngModel)]="foodItem">
+        <button mat-button [disabled]="!searchInput.value" (click)="onSearch()">
           <mat-icon matSuffix>search</mat-icon>
         </button>
         <mat-error></mat-error>
