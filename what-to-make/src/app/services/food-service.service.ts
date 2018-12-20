@@ -1,13 +1,14 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Subject, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FoodService {
 
-  request: Observable<{}>;
+  request = new Subject<{}>();
+  itemDoesNotExist = new EventEmitter<boolean>();
 
   constructor(private http: HttpClient) { }
 
@@ -15,6 +16,10 @@ export class FoodService {
     var body = {
       "item" : foodType
     }
-    this.request = this.http.post('http://localhost/example.test/api/post/recipeSearch.php', body);
+    this.http.post('/api/post/recipeSearch.php', body).subscribe((response) => {
+      this.request.next(response);
+    }, error => {
+      this.itemDoesNotExist.emit(true);
+    })
   }
 }

@@ -2,20 +2,20 @@
   <mat-toolbar color="primary" class="mat-elevation-z8">
     <h2>Food Search</h2>
     <span class="space"></span>
-    <button mat-mini-fab color="accent" (click)="displaySearchContainer = !displaySearchContainer">
+    <button mat-icon-button (click)="displaySearchContainer = !displaySearchContainer">
       <mat-icon>search</mat-icon>
     </button>
   </mat-toolbar>
   <div class="container searchContent" *ngIf="displaySearchContainer" @expandableState>
     <!--Search content-->
-    <div class="row search">
+    <div class="row search mat-elevation-z8">
       <mat-form-field appearance="outline" *ngIf="displaySearchContainer" @openClose>
         <input matInput placeholder="Search" #searchInput (keyup.enter)="onSearch()" [(ngModel)]="foodItem">
         <button mat-button [disabled]="!searchInput.value" (click)="onSearch()">
           <mat-icon matSuffix>search</mat-icon>
         </button>
-        <mat-error></mat-error>
       </mat-form-field>
+      <mat-progress-bar [mode]="'query'" color="accent" *ngIf="isLoading"></mat-progress-bar>
     </div>
     <!--Queried content-->
   </div>

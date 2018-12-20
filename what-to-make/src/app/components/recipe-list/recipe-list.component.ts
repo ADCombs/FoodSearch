@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { FoodService } from 'src/app/services/food-service.service';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-recipe-list',

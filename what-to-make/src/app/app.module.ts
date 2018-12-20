@@ -7,7 +7,9 @@ import {
   MatIconModule,
   MatSidenavModule,
   MatButtonModule,
-  MatCardModule
+  MatCardModule,
+  MatProgressBarModule,
+  MatSnackBarModule
 } from '@angular/material';
 import {FormsModule} from '@angular/forms';
 
@@ -26,6 +28,7 @@ import { RecipeListComponent } from './components/recipe-list/recipe-list.compon
     MainOverviewComponent,
     RecipeComponent,
     RecipeListComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,9 @@ import { RecipeListComponent } from './components/recipe-list/recipe-list.compon
     MatSidenavModule,
     MatButtonModule,
     MatCardModule,
-    FormsModule
+    FormsModule,
+    MatProgressBarModule,
+    MatSnackBarModule
   ],
   providers: [FoodService],
   bootstrap: [AppComponent]
